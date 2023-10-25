@@ -16,30 +16,7 @@
   <title>Game Board</title>
 </head>
 
-<body class="d-flex flex-column vh-100">
-
-  <div id="sounds">
-    Sounds: ON
-  </div>
-
-  <!-- Navigation menu -->
-
-  <div class="dropdown">
-    <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-      aria-expanded="false">
-      <i class="fa-solid fa-angles-down"></i>
-    </button>
-    <ul class="dropdown-menu menu" aria-labelledby="dropdownMenuButton1">
-      <a class="menu_icon" href="index.html">Home</a>
-      <a class="menu_icon" href="kitchen.html">Kitchen</a>
-    </ul>
-  </div>
-
-   <!-- Attack Button -->
-   <div class="w-100 position-relative text-center pt-1">
-    <h3 id="round" class="text-white"></h3>
-    <button id="attack-btn" class="btn btn-danger btn-lg pt-5">Attack</button>
-  </div>
+<body class="vh-100">
 
   <!-- Toast msg -->
   <div class="toast-container position-fixed top-0 end-0 p-3">
@@ -51,118 +28,150 @@
     </div>
   </div>
 
-  <!-- Characters -->
-  <div class="row w-100 flex-grow-1" id="game-board">
+  <button id="sounds" class="btn btn-outline-warning btn-sm position-fixed top-0 end-0 mt-2 me-4">Sounds: ON</button>
 
-    <!-- Villain Card -->
-    <div class="col-6 pb-5">
-      <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
-        <div class="card-header w-100 bg-transparent border-0">
-          <h5 id="villainName" class="card-title text-center"></h5>
-          <!-- Villain Stats -->
-          <div class="row px-2 pt-3 pb-4 villain-stats-section">
-            <div class="col">
-              <div class="progress">
-                <div id="villain-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
-                  aria-valuemin="0" aria-valuemax="100" style="width: 85%">
-                  <span class="text-left pl-2 progress-item">HP</span>
-                </div>
+  <main class="d-flex flex-column justify-content-between h-100">
+    <!-- Navigation menu -->
+    <div class="row text-center">
+      <div class="col">
+        <div class="dropdown-center">
+          <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false" aria-label="menu">
+            <i class="fa-solid fa-angles-down"></i>
+          </button>
+          <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
+            <li class="dropdown-item position-relative">
+              <a class="menu_icon stretched-link" href="index.html">Home</a>
+            </li>
+            <li class="dropdown-item position-relative">
+              <a class="menu_icon stretched-link" href="kitchen.html">Kitchen</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Game board -->
+    <div id="game-board" class="row">
+      <div class="col">
+        <!-- Round -->
+        <div class="row text-center my-5 my-lg-2">
+          <div class="col">
+            <h3 id="round" class="text-white"></h3>
+          </div>
+        </div>
+
+        <!-- Characters -->
+        <div class="row row-cols-2 g-1" id="characters">
+
+          <!-- Villain Card -->
+          <div class="col">
+            <div class="card h-100 bg-transparent border-0 d-flex flex-column justify-content-center align-items-center">
+              <div class="card-header bg-transparent border-0">
+                <h5 id="villainName" class="card-title text-center"></h5>
               </div>
-              <div class="progress">
-                <div id="villain-strength" class="progress-bar bg-danger" role="progressbar" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                  <span class="text-left pl-2 progress-item">Strength</span>
+                <!-- Villain Stats -->
+                <div class="card-body py-1">
+                  <div class="px-2 pt-3 pb-4 villain-stats-section">
+                    <div class="progress">
+                      <div id="villain-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="85"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                        <span class="text-left pl-2 progress-item">HP</span>
+                      </div>
+                    </div>
+                    <div class="progress">
+                      <div id="villain-strength" class="progress-bar bg-danger" role="progressbar" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="text-left pl-2 progress-item">Strength</span>
+                      </div>
+                    </div>
+                    <div class="progress">
+                      <div id="villain-agility" class="progress-bar bg-success" role="progressbar" aria-valuenow="80"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                        <span class="text-left pl-2 progress-item">Agility</span>
+                      </div>
+                    </div>
+                    <div class="progress">
+                      <div id="villain-dexterity" class="progress-bar bg-info" role="progressbar" aria-valuenow="65"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                        <span class="text-left pl-2 progress-item">Dexterity</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="progress">
-                <div id="villain-agility" class="progress-bar bg-success" role="progressbar" aria-valuenow="80"
-                  aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                  <span class="text-left pl-2 progress-item">Agility</span>
-                </div>
-              </div>
-              <div class="progress">
-                <div id="villain-dexterity" class="progress-bar bg-info" role="progressbar" aria-valuenow="65"
-                  aria-valuemin="0" aria-valuemax="100" style="width: 65%">
-                  <span class="text-left pl-2 progress-item">Dexterity</span>
-                </div>
+                <!-- ./villain stats -->
+              <div class="villain">
+                <img id="villainImage" src="" class="card-img-bottom"
+                  alt="tiny-vampire">
               </div>
             </div>
           </div>
-          <!-- ./villain stats -->
+          <!-- ./villain card -->
+
+          <!-- Player Card -->
+          <div class="col">
+            <div class="card h-100 bg-transparent border-0 d-flex flex-column justify-content-center align-items-center">
+              <div class="card-header bg-transparent border-0">
+                <h5 class="card-title text-center player-name">Player</h5>
+              </div>
+                <!-- Player Stats -->
+                <div class="card-body py-1">
+                  <div class="px-2 pt-3 pb-4 player-stats-section">
+                    <div class="progress">
+                      <div id="player-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="text-left pl-2 progress-item">HP</span>
+                      </div>
+                    </div>
+                    <div class="progress">
+                      <div id="player-strength" class="progress-bar bg-danger" role="progressbar" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="text-left pl-2 progress-item">Strength</span>
+                      </div>
+                    </div>
+                    <div class="progress">
+                      <div id="player-agility" class="progress-bar bg-success" role="progressbar" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="text-left pl-2 progress-item">Agility</span>
+                      </div>
+                    </div>
+                    <div class="progress">
+                      <div id="player-dexterity" class="progress-bar bg-info" role="progressbar" aria-valuenow="50"
+                        aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="text-left pl-2 progress-item">Dexterity</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- ./player stats -->
+                <div class="player">
+                  <img src="" class="card-img-bottom" alt="character">
+                </div>
+            </div>
+          </div>
+          <!-- ./player card -->
+
         </div>
-        <div class="card-body">
-          <div class="villain">
-            <img id="villainImage" src="" class="card-img-bottom"
-              alt="tiny-vampire">
+        <!-- ./characters -->
+
+        <!-- Attack button -->
+        <div class="row text-center my-5 my-lg-2">
+          <div class="col">
+            <button id="attack-btn" class="btn btn-warning shadow-lg">Attack</button>
           </div>
         </div>
       </div>
     </div>
-    <!-- ./villain card -->
+    <!-- ./game board -->
 
-    <!-- Player Card -->
-    <div class="col-6 pb-5">
-      <div class="card h-100 d-flex flex-column justify-content-center align-items-center">
-        <div class="card-header w-100 bg-transparent border-0">
-          <h5 class="card-title text-center player-name">Player</h5>
-          <!-- Player Stats -->
-          <div class="row px-2 pt-3 pb-4 player-stats-section">
-            <div class="col">
-              <div class="progress">
-                <div id="player-hp" class="progress-bar bg-warning" role="progressbar" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                  <span class="text-left pl-2 progress-item">HP</span>
-                </div>
-              </div>
-              <div class="progress">
-                <div id="player-strength" class="progress-bar bg-danger" role="progressbar" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                  <span class="text-left pl-2 progress-item">Strength</span>
-                </div>
-              </div>
-              <div class="progress">
-                <div id="player-agility" class="progress-bar bg-success" role="progressbar" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                  <span class="text-left pl-2 progress-item">Agility</span>
-                </div>
-              </div>
-              <div class="progress">
-                <div id="player-dexterity" class="progress-bar bg-info" role="progressbar" aria-valuenow="50"
-                  aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-                  <span class="text-left pl-2 progress-item">Dexterity</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- ./player stats -->
-        </div>
-        <div class="card-body">
-          <div class="player">
-            <img src="" class="card-img-bottom" alt="character">
-          </div>
-        </div>
+    <!-- Inventory -->
+    <div id="inventory-potions-container" class="row">
+      <div class="text-center col px-0">
+        <ul id="inventory-potions" class="list-inline px-4 pt-4"></ul>
       </div>
+      <!-- ./inventory potions -->
     </div>
-    <!-- ./player card -->
-
-  </div>
-  <!-- ./characters -->
-
-  <div class="w-100 position-relative text-center">
-
-  </div>
-
-
-  <!-- Inventory -->
-  <div id="inventory-potions-container" class="row w-100 mt-auto">
-    <!-- Inventory potions -->
-    <div class="text-center col px-0">
-      <ul id="inventory-potions" class="list-inline px-4 pt-4"></ul>
-    </div>
-    <!-- ./inventory potions -->
-  </div>
-
-
+  </main>
 
   <!-- Modal -->
   <div class="modal fade" id="playerSelect" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -247,7 +256,6 @@
   <script defer type="module" src="assets/js/potions_draggability.js"></script>
   <!-- Fontawesome Script -->
   <script src="https://kit.fontawesome.com/4e8d2c2bb0.js" crossorigin="anonymous"></script>
-
 
 </body>
 
