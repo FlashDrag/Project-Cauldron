@@ -105,21 +105,6 @@ body {
 }
 
 /* Navigation menu */
-
-.btn {
-    background: none;
-    border: none;
-}
-.btn:hover {
-    color: #eca72c;
-    background: none;
-    border: none;
-}
-
-.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
-    background: none;
-    border: none;
-}
 .dropdown {
     display: flex;
     justify-content: center;
