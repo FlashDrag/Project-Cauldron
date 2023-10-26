@@ -144,6 +144,9 @@ export function adjustStats(potionId, characterName) {
     let inventory = getInventory();
     let potion = inventory.find(item => item.id === potionId);
     let previous_character = getCharacter(characterName);
+    if (isAudioOn()) {
+        playBuffSound();
+    }
     let new_character = applyPotion(previous_character, potion);
     setCurrentCharacter(new_character, characterName);
 
@@ -161,13 +164,20 @@ export function adjustStats(potionId, characterName) {
 }
 
 function playAttackSound() {
-    const sound = new Audio('assets/sounds/witchs_laugh.wav');
-    const sound2 = new Audio('assets/sounds/demon_grunt.wav');
-    let random = Math.floor(Math.random() * 2) + 1;
+    const sound = new Audio('assets/sounds/demon_grunt.wav');
+    sound.play();
 
-    if (random === 1) {
-        sound.play();
-    } else {
-        sound2.play();
-    }
+    // TODO: add more sounds
+    // const sound2 = new Audio('assets/sounds/witchs_laugh.wav');
+    // let random = Math.floor(Math.random() * 2) + 1;
+    // if (random === 1) {
+    //     sound.play();
+    // } else {
+    //     sound2.play();
+    // }
+}
+
+function playBuffSound() {
+    const sound = new Audio('assets/sounds/buff.wav');
+    sound.play();
 }
