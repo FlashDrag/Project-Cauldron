@@ -119,12 +119,17 @@ body main {
 /* Stats */
 .card-body {
     width: 100%;
-    max-width: 170px;
+    max-width: 210px;
 }
 
-.player-stats-section,
-.villain-stats-section {
+.player-stats-section {
     background: url('../images/general/frame_stats.png') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+}
+
+.villain-stats-section {
+    background: url('../images/general/frame_stats_flip.png') no-repeat center center;
     background-size: cover;
     width: 100%;
 }
@@ -143,7 +148,7 @@ body main {
 /* Character images */
 .card-img-bottom {
     max-width: 100%;
-    max-height: 30vh;
+    max-height: 40vh;
     object-fit: cover;
 }
 
