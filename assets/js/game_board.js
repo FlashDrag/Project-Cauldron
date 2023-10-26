@@ -3,25 +3,16 @@ import {
     getCharacter, setCurrentCharacter, getGameRound, setGameRound, setPotionApplied, isPotionApplied, resetPotionApplied, isCharacterSelected
 } from "./game_storage.js"
 import { displayRound, displayPlayer, displayVillain, displayPotions, displayToastMsg } from "./game_board_display.js"
+import { isAudioOn } from "./audio.js";
 import generateCharacters from './generate_characters.js';
 import applyPotion from './apply_potion.js';
 import attack from './attack.js';
 
 let difficulty = 0.1;
-let audio = true;
 
 runGame(difficulty);
 
 document.getElementById('attack-btn').addEventListener('click', attackBtnHandler);
-document.getElementById('sounds').addEventListener('click', function () {
-    if (audio) {
-        audio = false;
-        document.getElementById('sounds').innerHTML = 'Sounds: OFF';
-    } else {
-        audio = true;
-        document.getElementById('sounds').innerHTML = 'Sounds: ON';
-    }
-});
 
 function runGame(difficulty) {
     let turn = getGameRound();
@@ -85,24 +76,14 @@ function attackBtnHandler() {
     // reset potion applied
     resetPotionApplied();
 
+    if (isAudioOn()) {
+        playAttackSound();
+    }
+
 
     let player = getCharacter("player");
     let villain = getCharacter("villain");
     let gameResult = attack(player, villain);
-    const sound = new Audio('assets/sounds/witchs_laugh.wav');
-    const sound2 = new Audio('assets/sounds/demon_grunt.wav');
-
-    let random = Math.floor(Math.random() * 2) + 1;
-    if (audio) {
-        if (random === 1) {
-            sound.play();
-        } else {
-            sound2.play();
-        }
-    }
-
-    console.log(gameResult.player);
-    console.log(gameResult.enemy);
 
     if (gameResult === true) {
         // player won
@@ -177,4 +158,16 @@ export function adjustStats(potionId, characterName) {
 
     // set potion applied
     setPotionApplied();
+}
+
+function playAttackSound() {
+    const sound = new Audio('assets/sounds/witchs_laugh.wav');
+    const sound2 = new Audio('assets/sounds/demon_grunt.wav');
+    let random = Math.floor(Math.random() * 2) + 1;
+
+    if (random === 1) {
+        sound.play();
+    } else {
+        sound2.play();
+    }
 }

@@ -1,9 +1,15 @@
-// Keyboard event for menu open
-document.addEventListener('keydown', function (event) {
-    if (event.key === 'p' || event.key === 'P') {
-        const menu = document.getElementById('menu');
-        menu.style.display = (menu.style.display === 'none' || menu.style.display === '') ? 'flex' : 'none';
+import { isAudioOn, toggleAudio } from './audio.js';
+
+document.addEventListener('DOMContentLoaded', function () {
+    let audioBtn = document.getElementById('audio-btn');
+    let audio = isAudioOn();
+    console.log(audio);
+    if (audio) {
+        audioBtn.innerHTML = 'Audio: ON';
+    } else {
+        audioBtn.innerHTML = 'Audio: OFF';
     }
+    audioBtn.addEventListener('click', toggleAudio);
 });
 
 // Initialize the toasts

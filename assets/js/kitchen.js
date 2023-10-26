@@ -4,6 +4,7 @@ let ingredients;
 
 import showRecipeBook from "./recipe_book.js";
 import { createInventory, resetInventory, getInventory, addToInventory, removeFromInventory } from "./inventory.js";
+import { isAudioOn } from "./audio.js";
 
 // standart drag and drop functions
 const draggableConfig = {
@@ -154,18 +155,18 @@ const dropdownAlertText = document.querySelector('.dropdown-alert-text');
 
 
 function brewPotion(potions, cauldronContents) {
-    // play 3 seconds of sound
-    const audio = new Audio('assets/sounds/bubbling.wav');
+    if (isAudioOn()) {
+        playBrewingSound();
+    }
+
     makeIngredientsNotDraggable();
 
     // change the cauldron gif to cauldron-brew.gif
     const cauldron = document.querySelector('.cauldron');
     document.querySelector('#couldron-img').setAttribute('src', 'assets/images/general/cauldron_brew.gif')
-    audio.play();
     // wait 3 seconds
     setTimeout(function () {
         // change the cauldron gif to cauldron.gif
-        audio.pause();
         document.querySelector('#couldron-img').setAttribute('src', 'assets/images/general/cauldron.gif')
     }, 2500);
 
@@ -196,7 +197,7 @@ function brewPotion(potions, cauldronContents) {
             , 1000);
 
             resetContentList(cauldronContents);
-            
+
             if (potionsBrewed < 10) {
                 addToInventory(potion);
             } else {
@@ -329,4 +330,12 @@ function createIngredientInventory() {
 
         ingredientsInventory.appendChild(parent);
     }
+}
+
+function playBrewingSound() {
+    const audio = new Audio('assets/sounds/bubbling.wav');
+    audio.play();
+    setTimeout(function () {
+        audio.pause();
+    }, 2500);
 }

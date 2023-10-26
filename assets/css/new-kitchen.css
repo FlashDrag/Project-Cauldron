@@ -27,6 +27,10 @@ body{
     touch-action: none;
 }
 
+#audio-btn {
+    z-index: 98;
+}
+
 #recipie-ingredients-img{
     max-width: 100%;
     max-height: 100%;
@@ -83,7 +87,7 @@ body{
     padding: 0 3rem 3rem 3rem;
 }
 
-#recipie-book-img-container> img, 
+#recipie-book-img-container> img,
 #return-buton-container> img{
     max-width: 70%;
     max-height: 70%;
@@ -219,12 +223,12 @@ body{
     justify-content: center;
     align-items: center;
     padding: 3px;
-    width: 5rem; 
+    width: 5rem;
 }
 
 .ingredient-container {
   padding: 3px;
-  width: 5rem; 
+  width: 5rem;
   background-size: contain;
     background-repeat: no-repeat;
     z-index: 2;
@@ -280,35 +284,35 @@ body{
     #recipie-ingredients-header{
         font-size: 1.5rem;
     }
-    
+
     .ingredient-container {
      padding: 1px;
-     width: 4rem; 
+     width: 4rem;
     }
-    
+
     .ingredient-for-recipie > div{
-        display: inline-block; 
+        display: inline-block;
         padding: 0;
-        width: 4rem; 
+        width: 4rem;
     }
-    
+
     .ingredient-for-recipie > p{
          line-height: 1;
          margin: 1rem;
     }
-    
-    
+
+
     #recipie-ingredients{
         padding: 0, 0, 1rem, 0;
     }
-    
+
     #recipie-book-container{
         padding-bottom: 0.5rem;
     }
-    
+
     #ingredients-list{
         height: 100%;
-        align-content: space-around;    
+        align-content: space-around;
         padding: 3rem;
     }
 }
@@ -318,17 +322,17 @@ body{
     #recipie-ingredients-header{
         font-size: 1.2rem;
     }
-    
+
     .ingredient-container {
      padding: 1px;
-     width: 3rem; 
+     width: 3rem;
     }
-    
+
     #recipie-ingredients-container{
         padding: 2rem 1rem 1rem 0 ;
-      
+
     }
-    
+
     .ingredient-for-recipie{
         display: flex;
         justify-content: center;
@@ -336,19 +340,19 @@ body{
         flex-direction: column;
         height: auto;
     }
-    
+
     .ingredient-for-recipie > div{
-        display: inline-block; 
+        display: inline-block;
         padding: 0;
-        width: 3rem; 
+        width: 3rem;
     }
-    
+
     .ingredient-for-recipie > p{
          line-height: 1;
          margin: 1rem;
     }
-    
-    
+
+
     #recipie-ingredients{
         width: 100%;
         display: flex;
@@ -359,22 +363,22 @@ body{
         gap: 0;
         padding: 0;
     }
-    
+
     #recipie-book-container{
         padding-bottom: 0.5rem;
     }
-    
+
     #ingredients-list{
        height: 100%;
-       align-content: space-around;    
+       align-content: space-around;
        padding: 1rem 5rem 1rem 5rem;
     }
-    
-    #return-buton-container, 
+
+    #return-buton-container,
     #recipie-book-img-container{
         width: 7rem;
     }
-    
+
     #couldron-img-container{
         height: 45vh;
     }
@@ -384,28 +388,28 @@ body{
     .ingredient-for-recipie > p{
         display: none;
     }
-    
-    #return-buton-container, 
+
+    #return-buton-container,
     #recipie-book-img-container{
         width: 4rem;
     }
-    
+
        #couldron-img-container{
         height: 25vh;
     }
-    
+
     #ingredients-list{
        height: 100%;
-       align-content: space-around;    
+       align-content: space-around;
        padding: 1rem 2rem 1rem 2rem;
     }
-    
+
     .recipie-book-container{
         height: auto;
     }
-    
+
     #recipie-ingredients-container{
         padding: 1rem 2rem 2rem 1rem ;
-      
+
     }
 }
