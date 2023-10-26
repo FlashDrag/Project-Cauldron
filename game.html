@@ -32,27 +32,26 @@
 
   <main class="d-flex flex-column justify-content-between h-100">
     <!-- Navigation menu -->
-    <div class="row text-center">
-      <div class="col">
-        <div class="dropdown-center">
-          <button class="btn btn-secondary" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-            aria-expanded="false" aria-label="menu">
+    <div class="row position-fixed top-0 w-100">
+      <div class="col text-center d-flex justify-content-center align-items-center p-0 m-0">
+        <nav class="menu position-relative" aria-label="menu">
+          <button class="d-flex justify-content-center align-items-center w-25 pb-1" aria-expanded="false">
             <i class="fa-solid fa-angles-down"></i>
           </button>
-          <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuButton1">
-            <li class="dropdown-item position-relative">
-              <a class="menu_icon stretched-link" href="index.html">Home</a>
+          <ul class="nav w-100 d-flex flex-column flex-sm-row justify-content-around">
+            <li class="">
+              <a class="" href="index.html">Home</a>
             </li>
-            <li class="dropdown-item position-relative">
-              <a class="menu_icon stretched-link" href="kitchen.html">Kitchen</a>
+            <li class="position-relative">
+              <a class="" href="kitchen.html">Kitchen</a>
             </li>
           </ul>
-        </div>
+        </nav>
       </div>
     </div>
 
     <!-- Game board -->
-    <div id="game-board" class="row">
+    <div id="game-board" class="row flex-grow-1 align-content-center">
       <div class="col">
         <!-- Round -->
         <div class="row text-center my-5 my-lg-2">
@@ -167,7 +166,7 @@
     <!-- Inventory -->
     <div id="inventory-potions-container" class="row">
       <div class="text-center col px-0">
-        <ul id="inventory-potions" class="list-inline px-4 pt-4"></ul>
+        <ul id="inventory-potions" class="list-inline h-100 mb-0 px-4 pt-4"></ul>
       </div>
       <!-- ./inventory potions -->
     </div>
@@ -252,6 +251,7 @@
   <!-- Main script JS -->
   <script src="assets/js/script.js"></script>
   <script type="module" defer src="assets/js/select_player.js"></script>
+  <script defer src="assets/js/game_menu.js"></script>
   <script defer type="module" src="assets/js/game_board.js"></script>
   <script defer type="module" src="assets/js/potions_draggability.js"></script>
   <!-- Fontawesome Script -->

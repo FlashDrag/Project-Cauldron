@@ -22,25 +22,83 @@ body main {
 
 /* Navigation menu */
 
-.dropdown-menu{
-    background: url(../images/general/frame_stats.png) no-repeat center center;
-    background-size: fit;
-    border: none;
-    --bs-dropdown-bg: none;
+.menu {
+    background: url(../images/general/frame_stats.png) no-repeat center center !important;
+    font-weight: 100;
+    background: #efefef;
+    width: 35%;
+    border-radius: 50px;
+    height: 140px;
+    z-index: 100;
+    -webkit-box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.2);
+    top: -130px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    color: #222;
 }
 
-.dropdown-item a {
+@media (min-width: 1200px) {
+    .menu {
+        width: 25%;
+    }
+}
+@media (min-width: 2000px) {
+    .menu {
+        width: 20%;
+    }
+}
+
+.menu.show {
+    top: -100px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu.show button i {
+    transform: rotate(180deg);
+}
+
+@media (max-width: 576px) {
+    .menu .nav {
+        margin-bottom: 15px !important;
+    }
+    .menu .nav li {
+        margin-bottom: 5px;
+    }
+
+    .menu.show {
+        top: -60px;
+    }
+}
+
+.menu button {
+    background: url(../images/general/frame_stats.png) no-repeat center center !important;
+    background-color: transparent;
+    position: absolute;
+    border: none;
+    border-radius: 50%;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.menu .nav {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+
+.menu .nav li a {
     text-decoration: none;
     color: #000000;
+    list-style-type: none;
 }
 
-.dropdown-item:focus, .dropdown-item:hover {
-    background-color: transparent;
-}
-
-.dropdown-item a:hover {
+.menu .nav li a:hover {
     color: #ffffff;
-    text-decoration: none;
 }
 
 /* ./navigation */
@@ -111,9 +169,12 @@ body main {
 #inventory-potions-container {
     --bs-gutter-x: 0;
     min-height: 5rem;
+    bottom: 0;
+}
+
+#inventory-potions {
     background: url('../images/general/frame_inventory.png') no-repeat center 0;
     background-size: cover;
-    bottom: 0;
 }
 
 .potion-img {
