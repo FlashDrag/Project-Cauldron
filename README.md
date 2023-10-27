@@ -1,4 +1,4 @@
-# Project Cauldron
+# Witches Brew
 ## 🎃🎃🎃 Phantom Forge: A Halloween Hackathon 🎃🎃🎃
 
 ![Responsive](docs/images/Responsive.png)
@@ -7,41 +7,35 @@
 Witches Brew is a one player game against the computer. The player commences with a health level and levels of strength, agility and dexterity. As the game proceeds the player must fight off enemies that also have strength, agility and dexterity levels. Against any given enemy the player will lose health points as a fight proceeds if the player's strength, agility and dexterity combined are less than that of the opponent. If the player's health points reach zero the game is over! However the player also has access to ingredients for making potions. Different potions will affect the strength, agility and dexterity of the player or of the enemy thus affecting the players ability to win. Brew the right potions to stay alive, stay in the game and continue to beat your enemies!!
 
 
-Live demo: https://Erikas-Ramanauskas.github.io/Project-Cauldron
+Live demo: https://flashdrag.github.io/witches-brew/
 
 ## Table of contents
-- [Project Cauldron](#project-cauldron)
-   * [🎃🎃🎃 Phantom Forge: A Halloween Hackathon 🎃🎃🎃](#-phantom-forge-a-halloween-hackathon-)
-   * [Overview](#overview)
-   * [Table of contents](#table-of-contents)
-   * [How to Play](#how-to-play)
-   * [Agile Methodology](#agile-methodology)
-      + [Project Goals](#project-goals)
-      + [Target Audience](#target-audience)
-      + [User Stories](#user-stories)
-         - [First time user](#first-time-user)
-         - [Game player](#game-player)
-      + [Development process](#development-process)
-   * [UX Design](#ux-design)
-   * [UI Design](#ui-design)
-      + [Fonts](#fonts)
-      + [Colours](#colours)
-      + [Sounds](#sounds)
-      + [Images and Animations](#images-and-animations)
-      + [Wireframes](#wireframes)
-   * [Features](#features)
-      + [Home Page](#home-page)
-      + [Game Menu](#game-menu)
-      + [Game Page](#game-page)
-      + [Witches Kitchen](#witches-kitchen)
-      + [Rules Page](#rules-page)
-      + [Creators Page](#creators-page)
-   * [Technologies Used](#technologies-used)
-   * [Testing](#testing)
-   * [Deployment](#deployment)
-   * [Credits](#credits)
-   * [Acknowledgements](#acknowledgements)
-   * [Team](#team)
+* [How to Play](#how-to-play)
+* [Agile Methodology](#agile-methodology)
+   + [Project Goals](#project-goals)
+   + [Target Audience](#target-audience)
+   + [User Stories](#user-stories)
+      - [First time user](#first-time-user)
+      - [Game player](#game-player)
+   + [Development process](#development-process)
+* [UX Design](#ux-design)
+* [UI Design](#ui-design)
+   + [Fonts](#fonts)
+   + [Colours](#colours)
+   + [Sounds](#sounds)
+   + [Images and Animations](#images-and-animations)
+   + [Wireframes](#wireframes)
+* [Features](#features)
+   + [Home Page](#home-page)
+   + [Game Menu](#game-menu)
+   + [Game Page](#game-page)
+   + [Witches Kitchen](#witches-kitchen)
+   + [Rules Page](#rules-page)
+   + [Creators Page](#creators-page)
+* [Technologies Used](#technologies-used)
+* [Testing](#testing)
+* [Deployment](#deployment)
+* [Credits](#credits)
 
 ## How to Play
 - At the outset the player is assigned health points as well as levels for strength, agility and dexterity.
@@ -312,7 +306,7 @@ alt="wireframe of the rules page"></details>
 | 16 | Links to creator github / linkedin | Open page in new tab | press cards | ✅ |
 
 ## Deployment
-This site has been deployed from a GitHub repository using GitHub technology to GitHub Pages. The site can be accessed <a href="https://erikas-ramanauskas.github.io/Project-Cauldron/" target="_blank">here</a>.
+This site has been deployed from a GitHub repository using GitHub technology to GitHub Pages. The site can be accessed <a href="flashdrag.github.io/witches-brew/" target="_blank">here</a>.
 
 ## Credits
 - ChatGPT was used to generate some of the images used in this project.
